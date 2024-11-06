@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RPSSL.Presentation\RPSSL.Presentation.csproj" />
+    <ProjectReference Include="..\..\src\RPSSL.Presentation\RPSSL.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

@@ -107,7 +107,7 @@ Response (application/json):
      ```
    - Local: PostgreSQL instance must be running and reachable. Update the connection string in `appsettings.Development.json` to match PostgreSQL's host and username/password, and run:
      ```bash
-     dotnet run --project RPSSL.WebApi\RPSSL.WebApi.csproj
+     dotnet run --project src\RPSSL.WebApi\RPSSL.WebApi.csproj
      ```
      After that, Api will be accessible on `https://localhost:5001`. Swagger page will be accessible on `https://localhost:5001/swagger/index.html`.
 3. Run the tests:

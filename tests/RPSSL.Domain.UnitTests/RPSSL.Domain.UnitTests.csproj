@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RPSSL.Domain\RPSSL.Domain.csproj" />
+    <ProjectReference Include="..\..\src\RPSSL.Domain\RPSSL.Domain.csproj" />
   </ItemGroup>
 
 </Project>

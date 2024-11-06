@@ -5,33 +5,33 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1C73F418-3408-4CCC-815A-FAC65AE34037}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Domain", "RPSSL.Domain\RPSSL.Domain.csproj", "{BBE85B7B-A0D1-4A8E-8998-5ED74FB43ECC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Domain", "src\RPSSL.Domain\RPSSL.Domain.csproj", "{BBE85B7B-A0D1-4A8E-8998-5ED74FB43ECC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Application", "RPSSL.Application\RPSSL.Application.csproj", "{2FF72F93-E09A-4DB5-9AF2-B2D52A66E287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Application", "src\RPSSL.Application\RPSSL.Application.csproj", "{2FF72F93-E09A-4DB5-9AF2-B2D52A66E287}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Infrastructure", "RPSSL.Infrastructure\RPSSL.Infrastructure.csproj", "{1EE0291D-C00D-437B-9DE8-C04C2C3604D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Infrastructure", "src\RPSSL.Infrastructure\RPSSL.Infrastructure.csproj", "{1EE0291D-C00D-437B-9DE8-C04C2C3604D2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Presentation", "RPSSL.Presentation\RPSSL.Presentation.csproj", "{18135555-93AB-4CC1-9AE2-DB61ACF91E8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Presentation", "src\RPSSL.Presentation\RPSSL.Presentation.csproj", "{18135555-93AB-4CC1-9AE2-DB61ACF91E8D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.WebApi", "RPSSL.WebApi\RPSSL.WebApi.csproj", "{38D32616-653F-4C0B-93C6-B345C81A4B05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.WebApi", "src\RPSSL.WebApi\RPSSL.WebApi.csproj", "{38D32616-653F-4C0B-93C6-B345C81A4B05}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{FD7CB019-5CED-43BA-B9DA-EF4F9D78F082}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C5B13BD4-959A-4A2F-A499-79BA07748831}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Domain.UnitTests", "RPSSL.Domain.UnitTests\RPSSL.Domain.UnitTests.csproj", "{07F8EF50-20B5-4BA5-985E-C37B0EF63E32}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Domain.UnitTests", "tests\RPSSL.Domain.UnitTests\RPSSL.Domain.UnitTests.csproj", "{07F8EF50-20B5-4BA5-985E-C37B0EF63E32}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Application.UnitTests", "RPSSL.Application.UnitTests\RPSSL.Application.UnitTests.csproj", "{39967D9A-7481-4002-990E-335E689279A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Application.UnitTests", "tests\RPSSL.Application.UnitTests\RPSSL.Application.UnitTests.csproj", "{39967D9A-7481-4002-990E-335E689279A9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Presentation.UnitTests", "RPSSL.Presentation.UnitTests\RPSSL.Presentation.UnitTests.csproj", "{17912A73-F3E9-402A-BF49-167D352271C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Presentation.UnitTests", "tests\RPSSL.Presentation.UnitTests\RPSSL.Presentation.UnitTests.csproj", "{17912A73-F3E9-402A-BF49-167D352271C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Infrastructure.UnitTests", "RPSSL.Infrastructure.UnitTests\RPSSL.Infrastructure.UnitTests.csproj", "{E08046E6-4CBB-40A5-AACD-FAA75396EEB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Infrastructure.UnitTests", "tests\RPSSL.Infrastructure.UnitTests\RPSSL.Infrastructure.UnitTests.csproj", "{E08046E6-4CBB-40A5-AACD-FAA75396EEB8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Application.IntegrationTests", "RPSSL.Application.IntegrationTests\RPSSL.Application.IntegrationTests.csproj", "{0F4DFD0D-DCDB-42E8-A536-E6A474A71401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RPSSL.Application.IntegrationTests", "tests\RPSSL.Application.IntegrationTests\RPSSL.Application.IntegrationTests.csproj", "{0F4DFD0D-DCDB-42E8-A536-E6A474A71401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSSL.WebApi.E2ETests", "RPSSL.WebApi.E2ETests\RPSSL.WebApi.E2ETests.csproj", "{8CA6555B-FA43-427E-8CE3-0D222EFCEC75}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RPSSL.WebApi.E2ETests", "tests\RPSSL.WebApi.E2ETests\RPSSL.WebApi.E2ETests.csproj", "{8CA6555B-FA43-427E-8CE3-0D222EFCEC75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureTests", "ArchitectureTests\ArchitectureTests.csproj", "{C9EB4117-247A-490F-8894-8166BD6167CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchitectureTests", "tests\ArchitectureTests\ArchitectureTests.csproj", "{C9EB4117-247A-490F-8894-8166BD6167CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
