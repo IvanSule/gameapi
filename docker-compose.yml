@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  rpssl.webapi:
+    image: ${DOCKER_REGISTRY-}rpsslwebapi
+    build:
+      context: .
+      dockerfile: RPSSL.WebApi/Dockerfile
+    ports:
+      - "5000:5000"
+      - "5001:5001"
+
+  scores.database:
+    image: postgres:latest
+    container_name: scores.database
+    environment:
+      - POSTGRES_DB=scores
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/scores-db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
