@@ -9,19 +9,19 @@ EXPOSE 5001
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["RPSSL.WebApi/RPSSL.WebApi.csproj", "RPSSL.WebApi/"]
-COPY ["RPSSL.Application/RPSSL.Application.csproj", "RPSSL.Application/"]
-COPY ["RPSSL.Domain/RPSSL.Domain.csproj", "RPSSL.Domain/"]
-COPY ["RPSSL.Infrastructure/RPSSL.Infrastructure.csproj", "RPSSL.Infrastructure/"]
-COPY ["RPSSL.Presentation/RPSSL.Presentation.csproj", "RPSSL.Presentation/"]
-RUN dotnet restore "./RPSSL.WebApi/./RPSSL.WebApi.csproj"
+COPY ["src/RPSSL.WebApi/RPSSL.WebApi.csproj", "src/RPSSL.WebApi/"]
+COPY ["src/RPSSL.Application/RPSSL.Application.csproj", "src/RPSSL.Application/"]
+COPY ["src/RPSSL.Domain/RPSSL.Domain.csproj", "src/RPSSL.Domain/"]
+COPY ["src/RPSSL.Infrastructure/RPSSL.Infrastructure.csproj", "src/RPSSL.Infrastructure/"]
+COPY ["src/RPSSL.Presentation/RPSSL.Presentation.csproj", "src/RPSSL.Presentation/"]
+RUN dotnet restore "src/RPSSL.WebApi/RPSSL.WebApi.csproj"
 COPY . .
-WORKDIR "/src/RPSSL.WebApi"
-RUN dotnet build "./RPSSL.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/src/RPSSL.WebApi"
+RUN dotnet build "RPSSL.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./RPSSL.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "RPSSL.WebApi.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
