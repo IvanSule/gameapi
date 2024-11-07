@@ -58,7 +58,7 @@ namespace ArchitectureTests.Domain
             foreach (var entityType in entityTypes)
             {
                 var properties = entityType.GetProperties(BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-                if (properties.Any(field => field.GetSetMethod(true) != null && field.GetSetMethod(true).IsPublic))
+                if (properties.Any(field => field.GetSetMethod(true) != null && field.GetSetMethod(true)!.IsPublic))
                 {
                     failingTypes.Add(entityType);
                 }

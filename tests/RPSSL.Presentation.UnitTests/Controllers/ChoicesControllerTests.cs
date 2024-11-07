@@ -41,11 +41,13 @@ namespace RPSSL.Presentation.UnitTests.Controllers
 
             // Assert
 
-            result.Should().BeOfType<OkObjectResult>();
+            //result.Should().BeOfType<OkObjectResult>();
 
-            var okResult = result as OkObjectResult;
+            //var okResult = result as OkObjectResult;
 
-            okResult.Value.Should().BeEquivalentTo(expectedChoices);
+            //okResult.Value.Should().BeEquivalentTo(expectedChoices);
+
+            result.Should().BeOfType<OkObjectResult>().Which.Value.Should().BeEquivalentTo(expectedChoices);
         }
     }
 }

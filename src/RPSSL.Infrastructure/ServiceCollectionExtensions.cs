@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Http.Resilience;
-using Polly;
 using RPSSL.Application.Abstractions;
 using RPSSL.Domain.Abstractions;
 using RPSSL.Domain.Implementations;
@@ -25,19 +23,8 @@ namespace RPSSL.Infrastructure
             services.AddHttpClient<IRandomNumberHttpService, RandomNumberHttpService>((serviceProvider, client) =>
             {
                 var address = serviceProvider.GetRequiredService<IConfiguration>().GetValue("BoohmaRandomNumberService:Url", "default");
-                client.BaseAddress = new Uri(address);
-            }).AddResilienceHandler("custom-pipeline", builder =>
-            {
-                builder.AddRetry(new HttpRetryStrategyOptions
-                {
-                    MaxRetryAttempts = 3,
-                    Delay = TimeSpan.FromSeconds(1),
-                    BackoffType = DelayBackoffType.Linear,
-                    UseJitter = true
-                })
-                .AddTimeout(TimeSpan.FromSeconds(5));
-
-            });
+                client.BaseAddress = new Uri(address!);
+            }).AddStandardResilienceHandler();
 
             services.AddDbContext<ApplicationDbContext>(builder =>
             builder.UseNpgsql(configuration.GetConnectionString("Database")));

@@ -4,6 +4,7 @@ using RPSSL.Application.Scores.Commands.ResetScoreboard;
 using RPSSL.Domain.Const;
 using RPSSL.Domain.Entities;
 using RPSSL.Domain.Enums;
+using RPSSL.Domain.Primitives;
 
 namespace RPSSL.Application.IntegrationTests.Scores
 {
@@ -22,9 +23,13 @@ namespace RPSSL.Application.IntegrationTests.Scores
 
             Guid newScore = Guid.NewGuid();
 
-            await DbContext.Set<Score>().AddAsync(Score.Create(newScore, DefaultPlayer.DefaultPlayerOne, RPSSLOptions.paper, DefaultPlayer.Computer, RPSSLOptions.rock, RPSSLResult.win, DateTime.UtcNow));
+            var mockScore = Score.Create(newScore, DefaultPlayer.DefaultPlayerOne, RPSSLOptions.paper, DefaultPlayer.Computer, RPSSLOptions.rock, RPSSLResult.win, DateTime.UtcNow);
+
+            await DbContext.Set<Score>().AddAsync(mockScore);
 
             await DbContext.SaveChangesAsync();
+
+            DbContext.Entry(mockScore).State = EntityState.Detached;
 
             //Act
 

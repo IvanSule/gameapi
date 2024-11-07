@@ -33,11 +33,13 @@ namespace RPSSL.Presentation.UnitTests.Controllers
 
             // Assert
 
-            result.Should().BeOfType<OkObjectResult>();
+            //result.Should().BeOfType<OkObjectResult>();
 
-            var okResult = result as OkObjectResult;
+            //var okResult = result as OkObjectResult;
 
-            okResult.Value.Should().Match<PlayResponse>(resp => resp.Player.Equals((RPSSLOptions)playRequest.Player));
+            //okResult.Value.Should().Match<PlayResponse>(resp => resp.Player.Equals((RPSSLOptions)playRequest.Player));
+
+            result.Should().BeOfType<OkObjectResult>().Which.Value.Should().Match<PlayResponse>(resp => resp.Player.Equals((RPSSLOptions)playRequest.Player));
         }
     }
 }

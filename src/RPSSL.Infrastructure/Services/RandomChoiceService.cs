@@ -17,7 +17,7 @@ namespace RPSSL.Domain.Implementations
         {
             var randomNumberResult = await _randomNumberService.GetRandomNumberResponseAsync();
 
-            if (randomNumberResult == null || randomNumberResult.random_number <= 0 || randomNumberResult.random_number >= 100) { throw new RandomNumberServiceException($"Boohma random number service returned unexpected value {randomNumberResult?.random_number}."); }
+            if (randomNumberResult == null || randomNumberResult.random_number <= 0 || randomNumberResult.random_number > 100) { throw new RandomNumberServiceException($"Boohma random number service returned unexpected value {randomNumberResult?.random_number}."); }
 
             int randomNumber = randomNumberResult.random_number;
 

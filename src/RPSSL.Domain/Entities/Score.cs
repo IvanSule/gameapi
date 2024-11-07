@@ -15,10 +15,11 @@ namespace RPSSL.Domain.Entities
             Result = result;
             PlayDate = playDate;
         }
-
+        //#pragma warning disable CS8618
         private Score()
         {
         }
+        //#pragma warning restore CS8618
 
         public string PlayerOne { get; private set; }
         public RPSSLOptions PlayerOneChoice { get; private set; }

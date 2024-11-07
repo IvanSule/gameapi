@@ -15,6 +15,7 @@ namespace RPSSL.Infrastructure.Services
         public async Task<IEnumerable<ScoreResponse>> GetTenLatestScores(string player)
         {
             var scores = await _context.Set<Score>()
+                .AsNoTracking()
                 .Where(score=>score.PlayerOne == player || score.PlayerTwo == player)
                 .OrderByDescending(score => score.PlayDate)
                 .Take(10)                

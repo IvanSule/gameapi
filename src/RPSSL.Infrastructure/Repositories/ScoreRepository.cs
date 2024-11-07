@@ -24,6 +24,7 @@ namespace RPSSL.Infrastructure.Repositories
         public async Task<IEnumerable<Score>> GetScoresByConditionAsync(Expression<Func<Score, bool>> predicate, CancellationToken cancellationToken)
         {
             return await _dbContext.Set<Score>()
+                .AsNoTracking()
                 .Where(predicate)
                 .ToListAsync(cancellationToken);
         }
